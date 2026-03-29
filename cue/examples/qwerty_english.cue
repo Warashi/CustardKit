@@ -10,7 +10,7 @@
     "interface": {
       "key_layout": {
         "type": "grid_fit",
-        "row_count": 10,
+        "row_count": 20,
         "column_count": 4
       },
       "key_style": "tenkey_style",
@@ -18,9 +18,9 @@
         for i, ch in ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"] {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": i,
+            "x": i * 2,
             "y": 0,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "custom",
@@ -47,9 +47,9 @@
         for i, ch in ["a", "s", "d", "f", "g", "h", "j", "k", "l"] {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": i,
+            "x": i * 2 + 1,
             "y": 1,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "custom",
@@ -78,7 +78,7 @@
           "specifier": {
             "x": 0,
             "y": 2,
-            "width": 1,
+            "width": 3,
             "height": 1
           },
           "key_type": "custom",
@@ -131,9 +131,9 @@
         for i, ch in ["z", "x", "c", "v", "b", "n", "m"] {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": i + 1,
+            "x": i * 2 + 3,
             "y": 2,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "custom",
@@ -160,9 +160,9 @@
         {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": 8,
+            "x": 17,
             "y": 2,
-            "width": 1,
+            "width": 3,
             "height": 1
           },
           "key_type": "custom",
@@ -196,7 +196,7 @@
           "specifier": {
             "x": 0,
             "y": 3,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "custom",
@@ -224,9 +224,9 @@
         {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": 1,
+            "x": 2,
             "y": 3,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "system",
@@ -237,9 +237,9 @@
         {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": 2,
+            "x": 4,
             "y": 3,
-            "width": 5,
+            "width": 10,
             "height": 1
           },
           "key_type": "custom",
@@ -266,9 +266,9 @@
         {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": 8,
+            "x": 16,
             "y": 3,
-            "width": 2,
+            "width": 4,
             "height": 1
           },
           "key_type": "system",
@@ -290,7 +290,7 @@
     "interface": {
       "key_layout": {
         "type": "grid_fit",
-        "row_count": 10,
+        "row_count": 20,
         "column_count": 4
       },
       "key_style": "tenkey_style",
@@ -298,9 +298,9 @@
         for i, ch in ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"] {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": i,
+            "x": i * 2,
             "y": 0,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "custom",
@@ -332,9 +332,9 @@
         for i, ch in ["A", "S", "D", "F", "G", "H", "J", "K", "L"] {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": i,
+            "x": i * 2 + 1,
             "y": 1,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "custom",
@@ -368,7 +368,7 @@
           "specifier": {
             "x": 0,
             "y": 2,
-            "width": 1,
+            "width": 3,
             "height": 1
           },
           "key_type": "custom",
@@ -396,9 +396,9 @@
         for i, ch in ["Z", "X", "C", "V", "B", "N", "M"] {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": i + 1,
+            "x": i * 2 + 3,
             "y": 2,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "custom",
@@ -430,9 +430,9 @@
         {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": 8,
+            "x": 17,
             "y": 2,
-            "width": 1,
+            "width": 3,
             "height": 1
           },
           "key_type": "custom",
@@ -466,7 +466,7 @@
           "specifier": {
             "x": 0,
             "y": 3,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "custom",
@@ -494,9 +494,9 @@
         {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": 1,
+            "x": 2,
             "y": 3,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "system",
@@ -507,9 +507,9 @@
         {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": 2,
+            "x": 4,
             "y": 3,
-            "width": 5,
+            "width": 10,
             "height": 1
           },
           "key_type": "custom",
@@ -536,9 +536,9 @@
         {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": 8,
+            "x": 16,
             "y": 3,
-            "width": 2,
+            "width": 4,
             "height": 1
           },
           "key_type": "system",
@@ -560,7 +560,7 @@
     "interface": {
       "key_layout": {
         "type": "grid_fit",
-        "row_count": 10,
+        "row_count": 20,
         "column_count": 4
       },
       "key_style": "tenkey_style",
@@ -568,9 +568,9 @@
         for i, ch in ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"] {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": i,
+            "x": i * 2,
             "y": 0,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "custom",
@@ -597,9 +597,9 @@
         for i, ch in ["A", "S", "D", "F", "G", "H", "J", "K", "L"] {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": i,
+            "x": i * 2 + 1,
             "y": 1,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "custom",
@@ -628,7 +628,7 @@
           "specifier": {
             "x": 0,
             "y": 2,
-            "width": 1,
+            "width": 3,
             "height": 1
           },
           "key_type": "custom",
@@ -656,9 +656,9 @@
         for i, ch in ["Z", "X", "C", "V", "B", "N", "M"] {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": i + 1,
+            "x": i * 2 + 3,
             "y": 2,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "custom",
@@ -690,9 +690,9 @@
         {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": 8,
+            "x": 17,
             "y": 2,
-            "width": 1,
+            "width": 3,
             "height": 1
           },
           "key_type": "custom",
@@ -726,7 +726,7 @@
           "specifier": {
             "x": 0,
             "y": 3,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "custom",
@@ -754,9 +754,9 @@
         {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": 1,
+            "x": 2,
             "y": 3,
-            "width": 1,
+            "width": 2,
             "height": 1
           },
           "key_type": "system",
@@ -767,9 +767,9 @@
         {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": 2,
+            "x": 4,
             "y": 3,
-            "width": 5,
+            "width": 10,
             "height": 1
           },
           "key_type": "custom",
@@ -796,9 +796,9 @@
         {
           "specifier_type": "grid_fit",
           "specifier": {
-            "x": 8,
+            "x": 16,
             "y": 3,
-            "width": 2,
+            "width": 4,
             "height": 1
           },
           "key_type": "system",
