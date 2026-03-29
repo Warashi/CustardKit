@@ -1,0 +1,1277 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/azooKey/CustardKit/json/custard.schema.json",
+  "title": "Custard",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/custard"
+    },
+    {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/custard"
+      }
+    }
+  ],
+  "$defs": {
+    "custard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identifier",
+        "language",
+        "input_style",
+        "metadata",
+        "interface"
+      ],
+      "properties": {
+        "identifier": {
+          "type": "string",
+          "minLength": 1
+        },
+        "language": {
+          "enum": [
+            "ja_JP",
+            "en_US",
+            "el_GR",
+            "undefined",
+            "none"
+          ]
+        },
+        "input_style": {
+          "enum": [
+            "direct",
+            "roman2kana"
+          ]
+        },
+        "metadata": {
+          "$ref": "#/$defs/metadata"
+        },
+        "interface": {
+          "$ref": "#/$defs/interface"
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "custard_version",
+        "display_name"
+      ],
+      "properties": {
+        "custard_version": {
+          "enum": [
+            "1.0",
+            "1.1",
+            "1.2"
+          ]
+        },
+        "display_name": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "interface": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key_layout",
+        "key_style",
+        "keys"
+      ],
+      "properties": {
+        "key_layout": {
+          "$ref": "#/$defs/key_layout"
+        },
+        "key_style": {
+          "enum": [
+            "tenkey_style",
+            "pc_style"
+          ]
+        },
+        "keys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/interface_element"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "key_layout": {
+                "properties": {
+                  "type": {
+                    "const": "grid_fit"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "keys": {
+                "items": {
+                  "$ref": "#/$defs/grid_fit_interface_element"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "key_layout": {
+                "properties": {
+                  "type": {
+                    "const": "grid_scroll"
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "keys": {
+                "items": {
+                  "$ref": "#/$defs/grid_scroll_interface_element"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "key_style": {
+                "const": "tenkey_style"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "keys": {
+                "items": {
+                  "$ref": "#/$defs/tenkey_interface_element"
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "key_style": {
+                "const": "pc_style"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "keys": {
+                "items": {
+                  "$ref": "#/$defs/pc_interface_element"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "key_layout": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/grid_fit_layout"
+        },
+        {
+          "$ref": "#/$defs/grid_scroll_layout"
+        }
+      ]
+    },
+    "grid_fit_layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "row_count",
+        "column_count"
+      ],
+      "properties": {
+        "type": {
+          "const": "grid_fit"
+        },
+        "row_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "column_count": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "grid_scroll_layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "direction",
+        "row_count",
+        "column_count"
+      ],
+      "properties": {
+        "type": {
+          "const": "grid_scroll"
+        },
+        "direction": {
+          "enum": [
+            "vertical",
+            "horizontal"
+          ]
+        },
+        "row_count": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "column_count": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "interface_element": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "specifier_type",
+        "specifier",
+        "key_type",
+        "key"
+      ],
+      "properties": {
+        "specifier_type": {
+          "enum": [
+            "grid_fit",
+            "grid_scroll"
+          ]
+        },
+        "specifier": true,
+        "key_type": {
+          "enum": [
+            "system",
+            "custom"
+          ]
+        },
+        "key": true
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "specifier_type": {
+                "const": "grid_fit"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "specifier": {
+                "$ref": "#/$defs/grid_fit_specifier"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "specifier_type": {
+                "const": "grid_scroll"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "specifier": {
+                "$ref": "#/$defs/grid_scroll_specifier"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "key_type": {
+                "const": "system"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "key": {
+                "$ref": "#/$defs/system_key"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "key_type": {
+                "const": "custom"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "key": {
+                "$ref": "#/$defs/custom_key"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "grid_fit_interface_element": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/interface_element"
+        },
+        {
+          "properties": {
+            "specifier_type": {
+              "const": "grid_fit"
+            }
+          }
+        }
+      ]
+    },
+    "grid_scroll_interface_element": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/interface_element"
+        },
+        {
+          "properties": {
+            "specifier_type": {
+              "const": "grid_scroll"
+            }
+          }
+        }
+      ]
+    },
+    "tenkey_interface_element": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/interface_element"
+        },
+        {
+          "if": {
+            "properties": {
+              "key_type": {
+                "const": "custom"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "key": {
+                "$ref": "#/$defs/tenkey_custom_key"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "pc_interface_element": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/interface_element"
+        },
+        {
+          "if": {
+            "properties": {
+              "key_type": {
+                "const": "custom"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "key": {
+                "$ref": "#/$defs/pc_custom_key"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "grid_fit_specifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y",
+        "width",
+        "height"
+      ],
+      "properties": {
+        "x": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "y": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "grid_scroll_specifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "index"
+      ],
+      "properties": {
+        "index": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "system_key": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "change_keyboard",
+            "enter",
+            "upper_lower",
+            "next_candidate",
+            "flick_kogaki",
+            "flick_kutoten",
+            "flick_hira_tab",
+            "flick_abc_tab",
+            "flick_star123_tab"
+          ]
+        }
+      }
+    },
+    "custom_key": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "design",
+        "press_actions",
+        "longpress_actions",
+        "variations"
+      ],
+      "properties": {
+        "design": {
+          "$ref": "#/$defs/key_design"
+        },
+        "press_actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/action"
+          }
+        },
+        "longpress_actions": {
+          "$ref": "#/$defs/longpress_actions"
+        },
+        "variations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/variation"
+          }
+        }
+      }
+    },
+    "tenkey_custom_key": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/custom_key"
+        },
+        {
+          "properties": {
+            "variations": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/flick_variation"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "pc_custom_key": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/custom_key"
+        },
+        {
+          "properties": {
+            "variations": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/longpress_variation"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "key_design": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label",
+        "color"
+      ],
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/label"
+        },
+        "color": {
+          "enum": [
+            "normal",
+            "special",
+            "selected",
+            "unimportant"
+          ]
+        }
+      }
+    },
+    "variation_key_design": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "label"
+      ],
+      "properties": {
+        "label": {
+          "$ref": "#/$defs/label"
+        }
+      }
+    },
+    "label": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "system_image"
+          ],
+          "properties": {
+            "system_image": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "main",
+            "sub"
+          ],
+          "properties": {
+            "type": {
+              "const": "main_and_sub"
+            },
+            "main": {
+              "type": "string"
+            },
+            "sub": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "main",
+            "directions"
+          ],
+          "properties": {
+            "type": {
+              "const": "main_and_directions"
+            },
+            "main": {
+              "type": "string"
+            },
+            "directions": {
+              "$ref": "#/$defs/directional_label"
+            }
+          }
+        }
+      ]
+    },
+    "directional_label": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "left": {
+          "type": "string"
+        },
+        "top": {
+          "type": "string"
+        },
+        "right": {
+          "type": "string"
+        },
+        "bottom": {
+          "type": "string"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "left"
+          ]
+        },
+        {
+          "required": [
+            "top"
+          ]
+        },
+        {
+          "required": [
+            "right"
+          ]
+        },
+        {
+          "required": [
+            "bottom"
+          ]
+        }
+      ]
+    },
+    "longpress_actions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "repeat"
+      ],
+      "properties": {
+        "duration": {
+          "enum": [
+            "normal",
+            "light"
+          ]
+        },
+        "start": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/action"
+          }
+        },
+        "repeat": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/action"
+          }
+        }
+      }
+    },
+    "variation": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/flick_variation"
+        },
+        {
+          "$ref": "#/$defs/longpress_variation"
+        }
+      ]
+    },
+    "flick_variation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "direction",
+        "key"
+      ],
+      "properties": {
+        "type": {
+          "const": "flick_variation"
+        },
+        "direction": {
+          "enum": [
+            "left",
+            "top",
+            "right",
+            "bottom"
+          ]
+        },
+        "key": {
+          "$ref": "#/$defs/variation_key"
+        }
+      }
+    },
+    "longpress_variation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "key"
+      ],
+      "properties": {
+        "type": {
+          "const": "longpress_variation"
+        },
+        "key": {
+          "$ref": "#/$defs/variation_key"
+        }
+      }
+    },
+    "variation_key": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "design",
+        "press_actions",
+        "longpress_actions"
+      ],
+      "properties": {
+        "design": {
+          "$ref": "#/$defs/variation_key_design"
+        },
+        "press_actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/action"
+          }
+        },
+        "longpress_actions": {
+          "$ref": "#/$defs/longpress_actions"
+        }
+      }
+    },
+    "action": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/input_action"
+        },
+        {
+          "$ref": "#/$defs/direct_input_action"
+        },
+        {
+          "$ref": "#/$defs/delete_action"
+        },
+        {
+          "$ref": "#/$defs/move_cursor_action"
+        },
+        {
+          "$ref": "#/$defs/move_tab_action"
+        },
+        {
+          "$ref": "#/$defs/select_candidate_action"
+        },
+        {
+          "$ref": "#/$defs/complete_action"
+        },
+        {
+          "$ref": "#/$defs/complete_character_form_action"
+        },
+        {
+          "$ref": "#/$defs/replace_last_characters_action"
+        },
+        {
+          "$ref": "#/$defs/replace_default_action"
+        },
+        {
+          "$ref": "#/$defs/smart_delete_action"
+        },
+        {
+          "$ref": "#/$defs/smart_delete_default_action"
+        },
+        {
+          "$ref": "#/$defs/smart_move_cursor_action"
+        },
+        {
+          "$ref": "#/$defs/enable_resizing_mode_action"
+        },
+        {
+          "$ref": "#/$defs/toggle_cursor_bar_action"
+        },
+        {
+          "$ref": "#/$defs/toggle_tab_bar_action"
+        },
+        {
+          "$ref": "#/$defs/toggle_caps_lock_state_action"
+        },
+        {
+          "$ref": "#/$defs/dismiss_keyboard_action"
+        },
+        {
+          "$ref": "#/$defs/paste_action"
+        },
+        {
+          "$ref": "#/$defs/launch_application_action"
+        }
+      ]
+    },
+    "input_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "text"
+      ],
+      "properties": {
+        "type": {
+          "const": "input"
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "direct_input_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "text"
+      ],
+      "properties": {
+        "type": {
+          "const": "direct_input"
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    },
+    "delete_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "count"
+      ],
+      "properties": {
+        "type": {
+          "const": "delete"
+        },
+        "count": {
+          "type": "integer"
+        }
+      }
+    },
+    "move_cursor_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "count"
+      ],
+      "properties": {
+        "type": {
+          "const": "move_cursor"
+        },
+        "count": {
+          "type": "integer"
+        }
+      }
+    },
+    "move_tab_action": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "tab_type",
+            "identifier"
+          ],
+          "properties": {
+            "type": {
+              "const": "move_tab"
+            },
+            "tab_type": {
+              "const": "system"
+            },
+            "identifier": {
+              "enum": [
+                "user_japanese",
+                "user_english",
+                "flick_japanese",
+                "flick_english",
+                "flick_numbersymbols",
+                "qwerty_japanese",
+                "qwerty_english",
+                "qwerty_numbers",
+                "qwerty_symbols",
+                "emoji_tab",
+                "clipboard_history_tab",
+                "last_tab"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "tab_type",
+            "identifier"
+          ],
+          "properties": {
+            "type": {
+              "const": "move_tab"
+            },
+            "tab_type": {
+              "const": "custom"
+            },
+            "identifier": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "selection": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "first",
+                "last"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "enum": [
+                "offset",
+                "exact"
+              ]
+            },
+            "value": {
+              "type": "integer"
+            }
+          }
+        }
+      ]
+    },
+    "select_candidate_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "selection"
+      ],
+      "properties": {
+        "type": {
+          "const": "select_candidate"
+        },
+        "selection": {
+          "$ref": "#/$defs/selection"
+        }
+      }
+    },
+    "complete_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "const": "complete"
+        }
+      }
+    },
+    "complete_character_form_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "forms"
+      ],
+      "properties": {
+        "type": {
+          "const": "complete_character_form"
+        },
+        "forms": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "hiragana",
+              "katakana",
+              "halfwidth_katakana",
+              "uppercase",
+              "lowercase"
+            ]
+          }
+        }
+      }
+    },
+    "replace_last_characters_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "table"
+      ],
+      "properties": {
+        "type": {
+          "const": "replace_last_characters"
+        },
+        "table": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "replace_default_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "const": "replace_default"
+        },
+        "replace_type": {
+          "enum": [
+            "default",
+            "dakuten",
+            "handakuten",
+            "kogaki"
+          ]
+        },
+        "fallbacks": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "default",
+              "dakuten",
+              "handakuten",
+              "kogaki"
+            ]
+          }
+        }
+      }
+    },
+    "smart_delete_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "direction",
+        "targets"
+      ],
+      "properties": {
+        "type": {
+          "const": "smart_delete"
+        },
+        "direction": {
+          "enum": [
+            "forward",
+            "backward"
+          ]
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "smart_delete_default_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "const": "smart_delete_default"
+        }
+      }
+    },
+    "smart_move_cursor_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "direction",
+        "targets"
+      ],
+      "properties": {
+        "type": {
+          "const": "smart_move_cursor"
+        },
+        "direction": {
+          "enum": [
+            "forward",
+            "backward"
+          ]
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "enable_resizing_mode_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "const": "enable_resizing_mode"
+        }
+      }
+    },
+    "toggle_cursor_bar_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "const": "toggle_cursor_bar"
+        }
+      }
+    },
+    "toggle_tab_bar_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "const": "toggle_tab_bar"
+        }
+      }
+    },
+    "toggle_caps_lock_state_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "const": "toggle_caps_lock_state"
+        }
+      }
+    },
+    "dismiss_keyboard_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "const": "dismiss_keyboard"
+        }
+      }
+    },
+    "paste_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "const": "paste"
+        }
+      }
+    },
+    "launch_application_action": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type",
+        "scheme_type",
+        "target"
+      ],
+      "properties": {
+        "type": {
+          "const": "launch_application"
+        },
+        "scheme_type": {
+          "enum": [
+            "azooKey",
+            "shortcuts"
+          ]
+        },
+        "target": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}
