@@ -592,9 +592,42 @@
           "type": "object",
           "additionalProperties": false,
           "required": [
+            "type",
+            "text"
+          ],
+          "properties": {
+            "type": {
+              "const": "text"
+            },
+            "text": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
             "system_image"
           ],
           "properties": {
+            "system_image": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "system_image"
+          ],
+          "properties": {
+            "type": {
+              "const": "system_image"
+            },
             "system_image": {
               "type": "string",
               "minLength": 1
