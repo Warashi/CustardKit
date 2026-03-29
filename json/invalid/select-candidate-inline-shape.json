@@ -1,0 +1,48 @@
+{
+  "identifier": "invalid_select_candidate_inline_shape",
+  "language": "none",
+  "input_style": "direct",
+  "metadata": {
+    "custard_version": "1.0",
+    "display_name": "invalid"
+  },
+  "interface": {
+    "key_layout": {
+      "type": "grid_fit",
+      "row_count": 1,
+      "column_count": 1
+    },
+    "key_style": "tenkey_style",
+    "keys": [
+      {
+        "specifier_type": "grid_fit",
+        "specifier": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "key_type": "custom",
+        "key": {
+          "design": {
+            "label": {
+              "text": "A"
+            },
+            "color": "normal"
+          },
+          "press_actions": [
+            {
+              "type": "select_candidate",
+              "value": 1
+            }
+          ],
+          "longpress_actions": {
+            "start": [],
+            "repeat": []
+          },
+          "variations": []
+        }
+      }
+    ]
+  }
+}
