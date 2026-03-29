@@ -1,0 +1,1343 @@
+{
+  "language": "el_GR",
+  "identifier": "flick_greek",
+  "input_style": "direct",
+  "interface": {
+    "key_layout": {
+      "type": "grid_fit",
+      "row_count": 5,
+      "column_count": 4
+    },
+    "key_style": "tenkey_style",
+    "keys": [
+      {
+        "specifier": {
+          "width": 1,
+          "y": 3,
+          "height": 1,
+          "x": 2
+        },
+        "specifier_type": "grid_fit",
+        "key_type": "custom",
+        "key": {
+          "press_actions": [
+            {
+              "type": "input",
+              "text": "'"
+            }
+          ],
+          "design": {
+            "label": {
+              "text": "'\"()"
+            },
+            "color": "normal"
+          },
+          "longpress_actions": {
+            "start": [],
+            "repeat": [],
+            "duration": "normal"
+          },
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "design": {
+                  "label": {
+                    "text": "\""
+                  }
+                },
+                "press_actions": [
+                  {
+                    "type": "input",
+                    "text": "\""
+                  }
+                ],
+                "longpress_actions": {
+                  "repeat": [],
+                  "duration": "normal",
+                  "start": []
+                }
+              },
+              "direction": "left"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "design": {
+                  "label": {
+                    "text": "("
+                  }
+                },
+                "press_actions": [
+                  {
+                    "type": "input",
+                    "text": "("
+                  }
+                ],
+                "longpress_actions": {
+                  "repeat": [],
+                  "duration": "normal",
+                  "start": []
+                }
+              },
+              "direction": "top"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "design": {
+                  "label": {
+                    "text": ")"
+                  }
+                },
+                "press_actions": [
+                  {
+                    "type": "input",
+                    "text": ")"
+                  }
+                ],
+                "longpress_actions": {
+                  "repeat": [],
+                  "duration": "normal",
+                  "start": []
+                }
+              },
+              "direction": "right"
+            }
+          ]
+        }
+      },
+      {
+        "key_type": "custom",
+        "specifier_type": "grid_fit",
+        "key": {
+          "design": {
+            "label": {
+              "text": "αβγ"
+            },
+            "color": "normal"
+          },
+          "press_actions": [
+            {
+              "type": "input",
+              "text": "α"
+            }
+          ],
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "β",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "β"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "left"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "γ",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "γ"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "top"
+            }
+          ],
+          "longpress_actions": {
+            "repeat": [],
+            "duration": "normal",
+            "start": []
+          }
+        },
+        "specifier": {
+          "x": 2,
+          "width": 1,
+          "y": 0,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "system",
+        "specifier_type": "grid_fit",
+        "key": {
+          "type": "enter"
+        },
+        "specifier": {
+          "x": 4,
+          "width": 1,
+          "y": 2,
+          "height": 2
+        }
+      },
+      {
+        "key_type": "custom",
+        "specifier_type": "grid_fit",
+        "key": {
+          "design": {
+            "label": {
+              "text": "κλμ"
+            },
+            "color": "normal"
+          },
+          "press_actions": [
+            {
+              "type": "input",
+              "text": "κ"
+            }
+          ],
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "λ",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "λ"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "left"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "μ",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "μ"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "top"
+            }
+          ],
+          "longpress_actions": {
+            "repeat": [],
+            "duration": "normal",
+            "start": []
+          }
+        },
+        "specifier": {
+          "x": 2,
+          "width": 1,
+          "y": 1,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "custom",
+        "specifier_type": "grid_fit",
+        "key": {
+          "design": {
+            "label": {
+              "text": "τυφ"
+            },
+            "color": "normal"
+          },
+          "press_actions": [
+            {
+              "type": "input",
+              "text": "τ"
+            }
+          ],
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "υ",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "υ"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "left"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "φ",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "φ"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "top"
+            }
+          ],
+          "longpress_actions": {
+            "repeat": [],
+            "duration": "normal",
+            "start": []
+          }
+        },
+        "specifier": {
+          "x": 2,
+          "width": 1,
+          "y": 2,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "custom",
+        "specifier_type": "grid_fit",
+        "key": {
+          "design": {
+            "label": {
+              "text": "νξο"
+            },
+            "color": "normal"
+          },
+          "press_actions": [
+            {
+              "type": "input",
+              "text": "ν"
+            }
+          ],
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "ξ",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "ξ"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "left"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "ο",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "ο"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "top"
+            }
+          ],
+          "longpress_actions": {
+            "repeat": [],
+            "duration": "normal",
+            "start": []
+          }
+        },
+        "specifier": {
+          "x": 3,
+          "width": 1,
+          "y": 1,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "custom",
+        "specifier_type": "grid_fit",
+        "key": {
+          "design": {
+            "label": {
+              "text": "αβγ"
+            },
+            "color": "selected"
+          },
+          "press_actions": [
+            {
+              "type": "move_tab",
+              "tab_type": "custom",
+              "identifier": "flick_greek"
+            }
+          ],
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "type": "move_cursor",
+                    "count": 1
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "→"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": [
+                    {
+                      "type": "move_cursor",
+                      "count": 1
+                    }
+                  ]
+                }
+              },
+              "direction": "right"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "identifier": "user_english",
+                    "tab_type": "system",
+                    "type": "move_tab"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "abc"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "top"
+            }
+          ],
+          "longpress_actions": {
+            "repeat": [],
+            "duration": "normal",
+            "start": []
+          }
+        },
+        "specifier": {
+          "x": 0,
+          "width": 1,
+          "y": 1,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "custom",
+        "specifier_type": "grid_fit",
+        "key": {
+          "design": {
+            "label": {
+              "text": "空白"
+            },
+            "color": "special"
+          },
+          "press_actions": [
+            {
+              "type": "input",
+              "text": " "
+            }
+          ],
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "type": "move_cursor",
+                    "count": -1
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "←"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": [
+                    {
+                      "type": "move_cursor",
+                      "count": -1
+                    }
+                  ]
+                }
+              },
+              "direction": "left"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "　",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "全角"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "top"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "\t",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "tab"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "bottom"
+            }
+          ],
+          "longpress_actions": {
+            "repeat": [],
+            "duration": "normal",
+            "start": [
+              {
+                "type": "toggle_cursor_bar"
+              }
+            ]
+          }
+        },
+        "specifier": {
+          "x": 4,
+          "width": 1,
+          "y": 1,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "custom",
+        "specifier_type": "grid_fit",
+        "key": {
+          "design": {
+            "label": {
+              "system_image": "delete.left"
+            },
+            "color": "special"
+          },
+          "press_actions": [
+            {
+              "type": "delete",
+              "count": 1
+            }
+          ],
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "type": "smart_delete_default"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "system_image": "xmark"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "left"
+            }
+          ],
+          "longpress_actions": {
+            "repeat": [
+              {
+                "type": "delete",
+                "count": 1
+              }
+            ],
+            "duration": "normal",
+            "start": []
+          }
+        },
+        "specifier": {
+          "x": 4,
+          "width": 1,
+          "y": 0,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "custom",
+        "specifier_type": "grid_fit",
+        "key": {
+          "design": {
+            "label": {
+              "text": ".,;!"
+            },
+            "color": "normal"
+          },
+          "press_actions": [
+            {
+              "type": "input",
+              "text": "."
+            }
+          ],
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": ",",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": ","
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "left"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": ";",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": ";"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "top"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "!",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "!"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "right"
+            }
+          ],
+          "longpress_actions": {
+            "repeat": [],
+            "duration": "normal",
+            "start": []
+          }
+        },
+        "specifier": {
+          "x": 3,
+          "width": 1,
+          "y": 3,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "custom",
+        "specifier_type": "grid_fit",
+        "key": {
+          "design": {
+            "label": {
+              "text": "@#/&_"
+            },
+            "color": "normal"
+          },
+          "press_actions": [
+            {
+              "type": "input",
+              "text": "@"
+            }
+          ],
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "#",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "#"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "left"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "/",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "/"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "top"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "&",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "&"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "right"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "_",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "_"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "bottom"
+            }
+          ],
+          "longpress_actions": {
+            "repeat": [],
+            "duration": "normal",
+            "start": []
+          }
+        },
+        "specifier": {
+          "x": 1,
+          "width": 1,
+          "y": 0,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "system",
+        "specifier_type": "grid_fit",
+        "key": {
+          "type": "flick_hira_tab"
+        },
+        "specifier": {
+          "x": 0,
+          "width": 1,
+          "y": 2,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "custom",
+        "specifier_type": "grid_fit",
+        "key": {
+          "design": {
+            "label": {
+              "text": "ηθι"
+            },
+            "color": "normal"
+          },
+          "press_actions": [
+            {
+              "type": "input",
+              "text": "η"
+            }
+          ],
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "θ",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "θ"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "left"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "ι",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "ι"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "top"
+            }
+          ],
+          "longpress_actions": {
+            "repeat": [],
+            "duration": "normal",
+            "start": []
+          }
+        },
+        "specifier": {
+          "x": 1,
+          "width": 1,
+          "y": 1,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "system",
+        "specifier_type": "grid_fit",
+        "key": {
+          "type": "flick_star123_tab"
+        },
+        "specifier": {
+          "x": 0,
+          "width": 1,
+          "y": 0,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "system",
+        "specifier_type": "grid_fit",
+        "key": {
+          "type": "change_keyboard"
+        },
+        "specifier": {
+          "x": 0,
+          "width": 1,
+          "y": 3,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "custom",
+        "specifier_type": "grid_fit",
+        "key": {
+          "design": {
+            "label": {
+              "text": "δεζ"
+            },
+            "color": "normal"
+          },
+          "press_actions": [
+            {
+              "type": "input",
+              "text": "δ"
+            }
+          ],
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "ε",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "ε"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "left"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "ζ",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "ζ"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "top"
+            }
+          ],
+          "longpress_actions": {
+            "repeat": [],
+            "duration": "normal",
+            "start": []
+          }
+        },
+        "specifier": {
+          "x": 3,
+          "width": 1,
+          "y": 0,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "custom",
+        "specifier_type": "grid_fit",
+        "key": {
+          "design": {
+            "label": {
+              "text": "χψω"
+            },
+            "color": "normal"
+          },
+          "press_actions": [
+            {
+              "type": "input",
+              "text": "χ"
+            }
+          ],
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "ψ",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "ψ"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "left"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "ω",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "ω"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "top"
+            }
+          ],
+          "longpress_actions": {
+            "repeat": [],
+            "duration": "normal",
+            "start": []
+          }
+        },
+        "specifier": {
+          "x": 3,
+          "width": 1,
+          "y": 2,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "custom",
+        "specifier_type": "grid_fit",
+        "key": {
+          "design": {
+            "label": {
+              "text": "πρσς"
+            },
+            "color": "normal"
+          },
+          "press_actions": [
+            {
+              "type": "input",
+              "text": "π"
+            }
+          ],
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "ρ",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "ρ"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "left"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "σ",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "σ"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "top"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "ς",
+                    "type": "input"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "ς"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "right"
+            }
+          ],
+          "longpress_actions": {
+            "repeat": [],
+            "duration": "normal",
+            "start": []
+          }
+        },
+        "specifier": {
+          "x": 1,
+          "width": 1,
+          "y": 2,
+          "height": 1
+        }
+      },
+      {
+        "key_type": "custom",
+        "specifier_type": "grid_fit",
+        "key": {
+          "design": {
+            "label": {
+              "text": "a/A"
+            },
+            "color": "normal"
+          },
+          "press_actions": [
+            {
+              "type": "replace_default"
+            }
+          ],
+          "variations": [
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "text": "´",
+                    "type": "input"
+                  },
+                  {
+                    "table": {
+                      "η´": "ή",
+                      "Ι´": "Ί",
+                      "Α´": "Ά",
+                      "υ´": "ύ",
+                      "ο´": "ό",
+                      "Η´": "Ή",
+                      "Ε´": "Έ",
+                      "Ο´": "Ό",
+                      "ι´": "ί",
+                      "ω´": "ώ",
+                      "Υ´": "Ύ",
+                      "ε´": "έ",
+                      "Ω´": "Ώ",
+                      "α´": "ά"
+                    },
+                    "type": "replace_last_characters"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "text": "´"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "right"
+            },
+            {
+              "type": "flick_variation",
+              "key": {
+                "press_actions": [
+                  {
+                    "type": "toggle_caps_lock_state"
+                  }
+                ],
+                "design": {
+                  "label": {
+                    "system_image": "shift.fill"
+                  }
+                },
+                "longpress_actions": {
+                  "start": [],
+                  "duration": "normal",
+                  "repeat": []
+                }
+              },
+              "direction": "top"
+            }
+          ],
+          "longpress_actions": {
+            "repeat": [],
+            "duration": "normal",
+            "start": []
+          }
+        },
+        "specifier": {
+          "x": 1,
+          "width": 1,
+          "y": 3,
+          "height": 1
+        }
+      }
+    ]
+  },
+  "metadata": {
+    "custard_version": "1.0",
+    "display_name": "ギリシャ語フリック"
+  }
+}
