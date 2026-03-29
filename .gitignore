@@ -12,3 +12,6 @@ __pycache__
 /*.xcodeproj
 xcuserdata/
 .swiftpm/
+
+/.pre-commit-config.yaml
+
