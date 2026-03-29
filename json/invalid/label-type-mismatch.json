@@ -1,0 +1,49 @@
+{
+  "identifier": "invalid_label_type_mismatch",
+  "language": "none",
+  "input_style": "direct",
+  "metadata": {
+    "custard_version": "1.0",
+    "display_name": "invalid"
+  },
+  "interface": {
+    "key_layout": {
+      "type": "grid_fit",
+      "row_count": 1,
+      "column_count": 1
+    },
+    "key_style": "tenkey_style",
+    "keys": [
+      {
+        "specifier_type": "grid_fit",
+        "specifier": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "key_type": "custom",
+        "key": {
+          "design": {
+            "label": {
+              "type": "system_image",
+              "text": "A"
+            },
+            "color": "normal"
+          },
+          "press_actions": [
+            {
+              "type": "input",
+              "text": "A"
+            }
+          ],
+          "longpress_actions": {
+            "start": [],
+            "repeat": []
+          },
+          "variations": []
+        }
+      }
+    ]
+  }
+}

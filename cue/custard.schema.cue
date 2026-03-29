@@ -212,11 +212,7 @@ matchN(1, [#custard, [...#custard]])
 
 #key_layout: matchN(1, [#grid_fit_layout, #grid_scroll_layout])
 
-#label: matchN(1, [close({
-	text!: string
-}), close({
-	system_image!: strings.MinRunes(1)
-}), close({
+#label: matchN(1, [#text_label, #system_image_label, close({
 	type!: "main_and_sub"
 	main!: string
 	sub!:  string
@@ -224,6 +220,20 @@ matchN(1, [#custard, [...#custard]])
 	type!:       "main_and_directions"
 	main!:       string
 	directions!: #directional_label
+})])
+
+#system_image_label: matchN(1, [close({
+	system_image!: strings.MinRunes(1)
+}), close({
+	type!:         "system_image"
+	system_image!: strings.MinRunes(1)
+})])
+
+#text_label: matchN(1, [close({
+	text!: string
+}), close({
+	type!: "text"
+	text!: string
 })])
 
 #launch_application_action: close({

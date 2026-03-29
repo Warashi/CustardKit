@@ -1,0 +1,78 @@
+{
+  "identifier": "documented_label_variants",
+  "language": "none",
+  "input_style": "direct",
+  "metadata": {
+    "custard_version": "1.0",
+    "display_name": "documented labels"
+  },
+  "interface": {
+    "key_layout": {
+      "type": "grid_fit",
+      "row_count": 1,
+      "column_count": 2
+    },
+    "key_style": "tenkey_style",
+    "keys": [
+      {
+        "specifier_type": "grid_fit",
+        "specifier": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "key_type": "custom",
+        "key": {
+          "design": {
+            "label": {
+              "type": "text",
+              "text": "abc"
+            },
+            "color": "normal"
+          },
+          "press_actions": [
+            {
+              "type": "input",
+              "text": "abc"
+            }
+          ],
+          "longpress_actions": {
+            "start": [],
+            "repeat": []
+          },
+          "variations": []
+        }
+      },
+      {
+        "specifier_type": "grid_fit",
+        "specifier": {
+          "x": 1,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "key_type": "custom",
+        "key": {
+          "design": {
+            "label": {
+              "type": "system_image",
+              "system_image": "star"
+            },
+            "color": "special"
+          },
+          "press_actions": [
+            {
+              "type": "toggle_tab_bar"
+            }
+          ],
+          "longpress_actions": {
+            "start": [],
+            "repeat": []
+          },
+          "variations": []
+        }
+      }
+    ]
+  }
+}
